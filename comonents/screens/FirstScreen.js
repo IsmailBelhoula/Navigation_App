@@ -1,22 +1,15 @@
 import React from "react";
-import {
-  StatusBar,
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 const FirstScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity
-        onPress={() => navigation.navigate("FirstScreen")}
-        style={styles.B2}
+        onPress={() => navigation.navigate("SecondScreen")}
+        style={styles.B1}
       >
-        <Text style={styles.T2}>Go to second screen</Text>
+        <Text style={styles.T1}>Go to second screen</Text>
       </TouchableOpacity>
-      <StatusBar style="auto" />
     </View>
   );
 };
@@ -28,14 +21,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  B2: {
+  B1: {
     padding: 10,
     borderRadius: 15,
-    borderWidth: 1,
-    borderColor: "#3467ff",
+    backgroundColor: "#3467ff",
   },
-  T2: {
-    color: "#3467ff",
+
+  T1: {
+    color: "white",
   },
 });
 

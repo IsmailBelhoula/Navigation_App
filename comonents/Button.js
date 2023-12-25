@@ -1,34 +1,35 @@
 import React from "react";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
-const Button = ({ text, onPress, B1, style, textColor }) => {
+const Button = ({ type, text, onPress }) => {
+  const buttonStyle = type === "secondary" ? styles.B2 : styles.B1;
+  const textStyle = type === "secondary" ? styles.T2 : styles.T1;
+
   return (
-    <TouchableOpacity
-      style={[styles.button, B1 ? styles.B1 : styles.B2, style]}
-      onPress={onPress}
-    >
-      <Text style={[styles.buttonText, { color: textColor }]}>{text}</Text>
+    <TouchableOpacity style={buttonStyle} onPress={onPress}>
+      <Text style={textStyle}>{text}</Text>
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
-  button: {
-    padding: 10,
-    margin: 10,
-    borderRadius: 15,
-  },
   B1: {
-    backgroundColor: "#3467ff", // Primary button style
-    borderWidth: 1,
-    borderColor: "#3467ff",
+    padding: 10,
+    borderRadius: 15,
+    backgroundColor: "#3467ff",
   },
   B2: {
+    padding: 10,
+    borderRadius: 15,
     borderWidth: 1,
     borderColor: "#3467ff",
   },
-  buttonText: {
-    textAlign: "center",
+  T1: {
+    color: "white",
+  },
+
+  T2: {
+    color: "#3467ff",
   },
 });
 
